@@ -33,7 +33,8 @@ CREATE OR REPLACE VIEW reporting.vw_sales_analysis
     f.order_profit_per_order,
     f.order_item_profit_ratio,
     f.days_for_shipping_real,
-    f.days_for_shipment_scheduled
+    f.days_for_shipment_scheduled,
+    f.late_delivery_risk
    FROM warehouse.factorderitems f
      JOIN warehouse.dimcustomer c ON f.customer_key = c.customer_key
      JOIN warehouse.dimproduct p ON f.product_key = p.product_key
